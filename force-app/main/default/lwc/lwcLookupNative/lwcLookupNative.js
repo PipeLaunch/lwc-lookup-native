@@ -4,12 +4,13 @@
  * @group             : Generic Components
  * @last modified on  : 11-26-2022
  * @last modified by  : samuel@pipelaunch.com
+ * @changelog         : 2022-11-26 - Initial version
  **/
 import { LightningElement, api } from "lwc";
 
 export default class LwcLookupNative extends LightningElement {
   /**
-   * lookup value
+   * @property {string} value The lookup value
    */
   @api get value() {
     return this._value;
@@ -20,12 +21,12 @@ export default class LwcLookupNative extends LightningElement {
   }
 
   /**
-   * The API name of the field to be displayed.
+   * @property {string} fieldName The API name of the field to be displayed.
    */
   @api fieldName = "AccountId";
 
   /**
-   * The variant changes the label position of an input field.
+   * @property {string} variant The variant changes the label position of an input field.
    * Accepted variants include standard, label-hidden, label-inline, and label-stacked.
    * The variant, if specified, determines the label position.
    * Otherwise, the density setting of the parent form determines the label position.
@@ -33,35 +34,35 @@ export default class LwcLookupNative extends LightningElement {
   @api variant = "label-hidden";
 
   /**
-   * If present, the input field must be filled out before the form is submitted.
+   * @property {boolean} required If present, the input field must be filled out before the form is submitted.
    */
   @api required = false;
 
   /**
-   * If present, the field is grayed out and users can't interact with it.
+   * @property {boolean} disabled If present, the field is grayed out and users can't interact with it.
    * Disabled fields don't receive focus and are skipped in tabbing navigation.
    */
   @api disabled = false;
 
   /**
-   * If true the change event will be propagated (composed an bubbles = true)
-   * The event listener should stop the propagation
+   * @property {boolean} @property {boolean} required  If true the change event will be propagated
+   * (composed an bubbles = true). The event listener should stop the propagation
    */
   @api propagateEvents = false;
 
   /**
-   * The API name of the object.
+   * @property {string} objectApiName The API name of the object.
    */
   @api objectApiName = "Contact";
 
   /**
-   * A CSS class for the form element.
+   * @property {string} formClass A CSS class for the form element.
    */
   @api formClass = "";
 
   /**
    * @description check if the input is valid
-   * @returns {Boolean}
+   * @returns {Boolean} false if invalid
    */
   @api
   reportValidity() {

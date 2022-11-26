@@ -15,6 +15,11 @@ After I did a proof of concept with the lighting record edit form, I found out t
 
 -   Integrated on a single component (easy to copy to multiple projects)
 
+## Notes
+
+-   On mobile the layout doesn't fill the full width after selected
+-   Limited to a single selection
+
 ## Instructions
 
 ### Use on your project

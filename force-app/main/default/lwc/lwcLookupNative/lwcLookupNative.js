@@ -74,6 +74,7 @@ export default class LwcLookupNative extends LightningElement {
    */
   handleChange(evt) {
     evt.stopPropagation();
+
     this._value =
       evt.detail &&
       evt.detail.value &&
@@ -81,6 +82,7 @@ export default class LwcLookupNative extends LightningElement {
       evt.detail.value.length > 0
         ? evt.detail.value[0]
         : null;
+
     this.dispatchEvent(
       new CustomEvent("change", {
         detail: this._value,

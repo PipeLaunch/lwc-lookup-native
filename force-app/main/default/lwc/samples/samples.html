@@ -1,0 +1,60 @@
+<!--
+  @description       : Sample usage of the custom component
+  @author            : samuel@pipelaunch.com
+  @group             : Generic Components
+  @last modified on  : 11-26-2022
+  @last modified by  : samuel@pipelaunch.com
+-->
+<template>
+    <section class="slds-grid slds-wrap slds-gutters">
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2
+            slds-var-m-bottom_medium">
+            <lightning-card title="Default values">
+                <div class="slds-var-p-horizontal_medium
+                    slds-var-p-vertical_small">
+                    <c-lwc-lookup-native></c-lwc-lookup-native>
+                </div>
+            </lightning-card>
+        </div>
+
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2
+            slds-var-m-bottom_medium">
+            <lightning-card title="Label variants">
+                <div class="slds-var-p-horizontal_medium
+                    slds-var-p-vertical_small">
+                    <!-- default variant -->
+                    <c-lwc-lookup-native variant="label-hidden"></c-lwc-lookup-native>
+                    <c-lwc-lookup-native variant="label-inline" form-class="slds-var-m-top_medium">
+                    </c-lwc-lookup-native>
+                    <c-lwc-lookup-native variant="label-stacked"></c-lwc-lookup-native>
+                </div>
+            </lightning-card>
+        </div>
+
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2
+            slds-var-m-bottom_medium">
+            <lightning-card title="Working with the value">
+                <div class="slds-var-p-horizontal_medium
+                    slds-var-p-vertical_small">
+                    <c-lwc-lookup-native data-selector="lookup-values" value={accountId} onchange={handleChange}
+                        required></c-lwc-lookup-native>
+
+                    <div class="slds-var-m-top_x-small">
+                        <span class="slds-form-element__label slds-text-color_weak slds-var-p-right_small">Selected
+                            value:</span><span>{accountId}</span>
+                    </div>
+
+                    <div class="slds-grid slds-var-m-top_small">
+                        <lightning-button class="slds-var-m-right_x-small" label="Validate" title="Validate lookup"
+                            onclick={handleClickValidate}>
+                        </lightning-button>
+
+                        <lightning-button label="Get value" title="Get value" onclick={handleClickGetValue}>
+                        </lightning-button>
+                    </div>
+
+                </div>
+            </lightning-card>
+        </div>
+    </section>
+</template>
